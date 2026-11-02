@@ -74,8 +74,9 @@ header {background:transparent !important;}
 [data-testid="stCheckbox"] {background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.1); border-radius:8px; padding:.7rem 1rem; margin-bottom:.4rem;}
 [data-testid="stCheckbox"]:hover {border-color:#F2B35E;}
 [data-testid="stImage"] img {width:100%; border-radius:12px; box-shadow:0 8px 30px rgba(0,0,0,.8);}
-.nota {font-family:'Caveat',cursive; font-size:1.8rem; line-height:1.4; color:#fff; background:rgba(255,255,255,.04);
+.nota {font-family:'Caveat',cursive !important; font-size:2rem !important; line-height:1.4; color:#fff !important; background:rgba(255,255,255,.06);
   border-left:3px solid var(--c); border-radius:12px; padding:1.2rem 1.5rem; margin-bottom:1rem;}
+.nota p, .nota span {font-family:'Caveat',cursive !important; color:#fff !important; font-size:2rem !important;}
 .pie {font-family:'Montserrat',sans-serif; text-align:center; color:#A0A0A0; font-size:0.9rem; margin-top:.7rem;}
 .dedic {text-align:center; color:#A0A0A0; margin-bottom:.8rem; font-style:italic;}
 </style>""".replace("__FIJAS__", _estrellas(150, False)).replace("__BRILLAN__", _estrellas(50, True))
