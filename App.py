@@ -45,7 +45,7 @@ def _estrellas(n, titilan):
         out.append(f"{r.uniform(0, 100):.1f}vw {r.uniform(0, 100):.1f}vh 0 {s}px rgba(255,255,255,{r.uniform(.45, 1):.2f})")
     return ",".join(out)
 
-# CSS Actualizado: Fondo negro, fuentes modernas, botones cuadrados/limpios
+# CSS Actualizado
 CSS = """<style>
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:wght@300;400;500&family=Caveat:wght@500&display=swap');
 .stApp, .stApp p, .stApp label, .stApp li, .stApp input, .stApp textarea, .stApp button,
@@ -95,19 +95,46 @@ def seccion(titulo, sub):
 ESTRELLAS = {
     "Betelgeuse": (5.919, 7.407, .5), "Rigel": (5.242, -8.202, .1), "Bellatrix": (5.419, 6.350, 1.6),
     "Mintaka": (5.533, -.299, 2.2), "Alnilam": (5.604, -1.202, 1.7), "Alnitak": (5.679, -1.943, 1.8),
-    "Aldebaran": (4.599, 16.509, .9), "Pléyades": (3.791, 24.105, 1.6),
-    "Sirius": (6.752, -16.716, -1.5), "Procyon": (7.655, 5.225, .4),
+    "Saiph": (5.796, -9.670, 2.1), "Meissa": (5.585, 9.934, 3.5),
+    "Aldebaran": (4.599, 16.509, .9), "Elnath": (5.438, 28.608, 1.7), "Zeta Tau": (5.627, 21.143, 3.0),
+    "Gamma Tau": (4.330, 15.628, 3.6), "Pléyades": (3.791, 24.105, 1.6),
+    "Sirius": (6.752, -16.716, -1.5), "Adhara": (6.977, -28.972, 1.5), "Wezen": (7.140, -26.393, 1.8),
+    "Mirzam": (6.378, -17.956, 2.0), "Procyon": (7.655, 5.225, .4), "Gomeisa": (7.452, 8.289, 2.9),
     "Castor": (7.577, 31.888, 1.6), "Pollux": (7.755, 28.026, 1.1),
-    "Capella": (5.278, 45.998, .1), "Polaris": (2.530, 89.264, 2.0),
-    "Vega": (18.616, 38.784, 0.), "Deneb": (20.690, 45.280, 1.3), "Altair": (19.846, 8.868, .8)
+    "Capella": (5.278, 45.998, .1), "Menkalinan": (5.992, 44.947, 1.9),
+    "Theta Aur": (5.995, 37.213, 2.6), "Iota Aur": (4.950, 33.166, 2.7),
+    "Caph": (.153, 59.150, 2.3), "Schedar": (.675, 56.537, 2.2), "Gamma Cas": (.945, 60.717, 2.4),
+    "Ruchbah": (1.430, 60.235, 2.7), "Segin": (1.907, 63.670, 3.4),
+    "Dubhe": (11.062, 61.751, 1.8), "Merak": (11.031, 56.382, 2.4), "Phecda": (11.897, 53.695, 2.4),
+    "Megrez": (12.257, 57.033, 3.3), "Alioth": (12.900, 55.960, 1.8), "Mizar": (13.399, 54.925, 2.2),
+    "Alkaid": (13.792, 49.313, 1.9),
+    "Regulus": (10.139, 11.967, 1.4), "Algieba": (10.333, 19.842, 2.1), "Zosma": (11.235, 20.524, 2.6),
+    "Denebola": (11.818, 14.572, 2.1),
+    "Markab": (23.079, 15.205, 2.5), "Scheat": (23.063, 28.083, 2.4), "Alpheratz": (.139, 29.091, 2.1),
+    "Algenib": (.220, 15.184, 2.8), "Mirach": (1.162, 35.621, 2.1), "Almach": (2.065, 42.330, 2.3),
+    "Mirfak": (3.405, 49.861, 1.8), "Algol": (3.136, 40.956, 2.1),
+    "Vega": (18.616, 38.784, 0.), "Deneb": (20.690, 45.280, 1.3), "Altair": (19.846, 8.868, .8),
+    "Fomalhaut": (22.961, -29.622, 1.2), "Polaris": (2.530, 89.264, 2.0), "Arcturus": (14.261, 19.182, 0.),
+    "Spica": (13.420, -11.161, 1.0), "Canopus": (6.399, -52.696, -.7),
 }
 CONSTELACIONES = {
-    "Orión": [["Betelgeuse", "Alnitak", "Alnilam", "Mintaka", "Bellatrix"], ["Alnitak", "Rigel", "Mintaka"]],
-    "Tauro": [["Aldebaran"]],
-    "Can Mayor": [["Sirius"]],
-    "Osa Menor": [["Polaris"]]
+    "Orión": [["Meissa", "Betelgeuse", "Alnitak", "Alnilam", "Mintaka", "Bellatrix", "Meissa"],
+              ["Alnitak", "Saiph", "Rigel", "Mintaka"]],
+    "Tauro": [["Gamma Tau", "Aldebaran", "Zeta Tau"], ["Aldebaran", "Elnath"]],
+    "Can Mayor": [["Mirzam", "Sirius", "Wezen", "Adhara"]],
+    "Can Menor": [["Gomeisa", "Procyon"]],
+    "Géminis": [["Castor", "Pollux"]],
+    "Auriga": [["Capella", "Menkalinan", "Theta Aur", "Elnath", "Iota Aur", "Capella"]],
+    "Casiopea": [["Caph", "Schedar", "Gamma Cas", "Ruchbah", "Segin"]],
+    "Osa Mayor": [["Dubhe", "Merak", "Phecda", "Megrez", "Dubhe"], ["Megrez", "Alioth", "Mizar", "Alkaid"]],
+    "Leo": [["Regulus", "Algieba", "Zosma", "Denebola"]],
+    "Pegaso": [["Markab", "Scheat", "Alpheratz", "Algenib", "Markab"]],
+    "Andrómeda": [["Alpheratz", "Mirach", "Almach"]],
+    "Perseo": [["Almach", "Mirfak", "Algol"]],
+    "Triángulo de verano": [["Vega", "Deneb", "Altair", "Vega"]],
 }
-CON_NOMBRE = {"Sirius", "Betelgeuse", "Rigel", "Aldebaran", "Capella", "Procyon", "Pollux", "Vega", "Polaris"}
+CON_NOMBRE = {"Sirius", "Betelgeuse", "Rigel", "Aldebaran", "Capella", "Procyon", "Pollux", "Vega",
+              "Polaris", "Canopus", "Pléyades", "Fomalhaut", "Arcturus", "Altair", "Deneb"}
 
 @st.cache_data(show_spinner=False)
 def mapa_png(hora):
@@ -127,16 +154,19 @@ def mapa_png(hora):
     fig.patch.set_alpha(0)
     ax.add_patch(plt.Circle((0, 0), 1, color="#030407"))
     ax.add_patch(plt.Circle((0, 0), 1, fill=False, ec=BLANCO, lw=1, alpha=0.3))
+    
+    # Líneas más gruesas y visibles
     for nombre, cadenas in CONSTELACIONES.items():
         vistas = set()
         for c in cadenas:
             for a, b in zip(c, c[1:]):
                 if pos[a][2] and pos[b][2]:
-                    ax.plot([pos[a][0], pos[b][0]], [pos[a][1], pos[b][1]], color=BLANCO, alpha=.3, lw=1)
+                    ax.plot([pos[a][0], pos[b][0]], [pos[a][1], pos[b][1]], color=BLANCO, alpha=0.6, lw=1.5)
                     vistas |= {a, b}
         if vistas:
             ax.text(np.mean([pos[s][0] for s in vistas]), np.mean([pos[s][1] for s in vistas]) - .045, nombre,
-                    color=BLANCO, fontsize=7.5, style="italic", ha="center", alpha=.6)
+                    color=BLANCO, fontsize=7.5, style="italic", ha="center", alpha=0.9)
+            
     vis = [(x, y, m, n) for n, (x, y, ok, m) in pos.items() if ok]
     ax.scatter([v[0] for v in vis], [v[1] for v in vis],
                s=[8 * np.clip(4.2 - v[2], .8, 6) ** 2 for v in vis], color="#FFF", zorder=3)
@@ -160,8 +190,9 @@ def mover(delta, n):
 # ───────────── Nuestro cielo ─────────────
 seccion("Nuestro cielo", "La noche que lo cambió todo")
 st.markdown(f'<div class="dedic">{DEDICATORIA}</div>', unsafe_allow_html=True)
-st.image(mapa_png(21))
-st.caption("El cielo de Guadalajara a las 9:00 PM.")
+# Hora fija a las 23:00 (11:00 PM) para que las constelaciones principales estén altas y claras
+st.image(mapa_png(23))
+st.caption("El cielo de Guadalajara a las 11:00 PM.")
 
 # ───────────── Nuestro álbum ─────────────
 seccion("Nuestro álbum", "Lugares y momentos")
@@ -190,14 +221,18 @@ if fotos:
         st.session_state.aviso = "Foto eliminada."
         st.rerun()
 
-    # Script JS para cambiar la foto automáticamente cada 30 segundos
+    # Script JS mejorado para cambiar la foto automáticamente cada 8 segundos
     components.html("""
     <script>
-    setTimeout(() => {
-        const btns = Array.from(window.parent.document.querySelectorAll('button'));
-        const nextBtn = btns.find(b => b.innerText.includes('Siguiente'));
-        if(nextBtn) nextBtn.click();
-    }, 30000);
+    setTimeout(function() {
+        var buttons = window.parent.document.querySelectorAll('button');
+        for (var i = 0; i < buttons.length; i++) {
+            if (buttons[i].innerText.indexOf('Siguiente') !== -1) {
+                buttons[i].click();
+                break;
+            }
+        }
+    }, 8000);
     </script>
     """, height=0)
 
