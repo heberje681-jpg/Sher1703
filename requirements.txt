@@ -1,0 +1,6 @@
+streamlit>=1.40
+matplotlib
+numpy
+pillow
+pillow-heif
+requests
