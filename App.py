@@ -47,7 +47,7 @@ def _estrellas(n, titilan):
 
 # CSS Actualizado
 CSS = """<style>
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:wght@300;400;500&family=Caveat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:wght@300;400;500&family=Sacramento&display=swap');
 .stApp, .stApp p, .stApp label, .stApp li, .stApp input, .stApp textarea, .stApp button,
 .stApp [data-testid="stCaptionContainer"] {font-family:'Montserrat',sans-serif; font-weight:300; color:#E0E0E0;}
 .stApp {background: radial-gradient(circle at 50% 50%, #0d111a 0%, #000000 100%) fixed;}
@@ -74,9 +74,9 @@ header {background:transparent !important;}
 [data-testid="stCheckbox"] {background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.1); border-radius:8px; padding:.7rem 1rem; margin-bottom:.4rem;}
 [data-testid="stCheckbox"]:hover {border-color:#F2B35E;}
 [data-testid="stImage"] img {width:100%; border-radius:12px; box-shadow:0 8px 30px rgba(0,0,0,.8);}
-.nota {font-family:'Caveat',cursive !important; font-size:2rem !important; line-height:1.4; color:#fff !important; background:rgba(255,255,255,.06);
-  border-left:3px solid var(--c); border-radius:12px; padding:1.2rem 1.5rem; margin-bottom:1rem;}
-.nota p, .nota span {font-family:'Caveat',cursive !important; color:#fff !important; font-size:2rem !important;}
+.nota {font-family:'Sacramento',cursive !important; font-size:2.4rem !important; line-height:1.5; color:#fff !important; background:rgba(255,255,255,.04);
+  border-left:2px solid var(--c); border-radius:12px; padding:1.2rem 1.5rem; margin-bottom:1rem; font-weight:300 !important;}
+.nota p, .nota span {font-family:'Sacramento',cursive !important; color:#fff !important; font-size:2.4rem !important; font-weight:300 !important;}
 .pie {font-family:'Montserrat',sans-serif; text-align:center; color:#A0A0A0; font-size:0.9rem; margin-top:.7rem;}
 .dedic {text-align:center; color:#A0A0A0; margin-bottom:.8rem; font-style:italic;}
 </style>""".replace("__FIJAS__", _estrellas(150, False)).replace("__BRILLAN__", _estrellas(50, True))
