@@ -85,8 +85,6 @@ st.markdown(f"""<div class="hero"><div class="t">Para {html.escape(ELLA)}</div>
 <div class="s">Un cielo, un álbum y todo lo que nos falta por vivir.</div></div>""",
             unsafe_allow_html=True)
 
-if not db.obtener().persistente:
-    st.info("Modo prueba: lo que guardes se borra al reiniciar la app.")
 if "aviso" in st.session_state:
     st.success(st.session_state.pop("aviso"))
 
@@ -153,8 +151,7 @@ def mapa_png(hora):
 
 def preparar_foto(archivo):
     img = ImageOps.exif_transpose(Image.open(archivo)).convert("RGB")
-    img.thumbnail((1600, 1600))
-    buf = BytesIO(); img.save(buf, "JPEG", quality=82, optimize=True)
+    buf = BytesIO(); img.save(buf, "JPEG", quality=95, optimize=True)
     return buf.getvalue()
 
 def mover(delta, n):
@@ -163,8 +160,8 @@ def mover(delta, n):
 # ───────────── Nuestro cielo ─────────────
 seccion("Nuestro cielo", "La noche que lo cambió todo")
 st.markdown(f'<div class="dedic">{DEDICATORIA}</div>', unsafe_allow_html=True)
-hora = st.select_slider("Hora local", options=[19, 20, 21, 22, 23], value=21, format_func=lambda h: f"{h}:00")
-st.image(mapa_png(hora))
+st.image(mapa_png(21))
+st.caption("El cielo de Guadalajara a las 9:00 PM.")
 
 # ───────────── Nuestro álbum ─────────────
 seccion("Nuestro álbum", "Lugares y momentos")
@@ -204,12 +201,12 @@ if fotos:
     </script>
     """, height=0)
 
-    # Cuadrícula inferior con todas las fotos
-    st.markdown("<br><p style='text-align:center; font-size:0.8rem; letter-spacing:1px; color:#555;'>TODAS LAS FOTOS</p>", unsafe_allow_html=True)
-    grid_cols = st.columns(3)
-    for idx, f in enumerate(fotos):
-        with grid_cols[idx % 3]:
-            st.image(db.bytes_foto(f), use_container_width=True)
+    # Cuadrícula inferior oculta en un desplegable
+    with st.expander("📂 Ver todas las fotos"):
+        grid_cols = st.columns(3)
+        for idx, f in enumerate(fotos):
+            with grid_cols[idx % 3]:
+                st.image(db.bytes_foto(f), use_container_width=True)
 
 else:
     st.markdown('<div class="pie">Aquí van a vivir nuestros viajes. Sube la primera foto.</div>', unsafe_allow_html=True)
